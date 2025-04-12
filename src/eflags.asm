@@ -55,3 +55,17 @@ section .data
 section .bss
   eflags_result resb 4
   cpuid_active resb 1
+
+
+section .text
+  global _start
+
+_start:
+  pushfd
+  pop eax
+  mov [eflags_result], eax
+
+  isCpuidActive eax
+  mov [cpuid_active], al
+
+  cmp byte [cpuid_active], 0
