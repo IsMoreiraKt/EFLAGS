@@ -50,3 +50,8 @@ section .data
 
   neg_cpuid_msg db "cpuid is not active", 0XA, 0
   len_neg_cpuid equ $ - neg_cpuid_msg
+
+
+section .bss
+  eflags_result resb 4
+  cpuid_active resb 1
