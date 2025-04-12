@@ -71,6 +71,13 @@ _start:
   cmp byte [cpuid_active], 0
   je .cpuid_neg
 
+  print pos_cpuid_msg, len_pos_cpuid
+
+  jmp .done
+
 .cpuid_neg:
   print neg_cpuid_msg, len_neg_cpuid
   jmp .done
+
+.done:
+  exit 0
