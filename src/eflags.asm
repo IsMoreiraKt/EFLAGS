@@ -41,3 +41,12 @@
   mov ebx, %1
   int 0x80
 %endmacro
+
+
+
+section .data
+  pos_cpuid_msg db "cpuid is enabled", 0xA, 0
+  len_pos_cpuid equ $ - pos_cpuid_msg
+
+  neg_cpuid_msg db "cpuid is not active", 0XA, 0
+  len_neg_cpuid equ $ - neg_cpuid_msg
