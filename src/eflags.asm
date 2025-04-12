@@ -69,3 +69,8 @@ _start:
   mov [cpuid_active], al
 
   cmp byte [cpuid_active], 0
+  je .cpuid_neg
+
+.cpuid_neg:
+  print neg_cpuid_msg, len_neg_cpuid
+  jmp .done
