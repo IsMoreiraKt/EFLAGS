@@ -22,3 +22,14 @@
   shr eax, 21
   and eax, 1
 %endmacro
+
+
+; %1 -> message
+; %2 -> message length
+%macro print 2
+  mov eax, 4
+  mov ebx, 1
+  mov ecx, %1
+  mov edx, %2
+  int 0x80
+%endmacro
